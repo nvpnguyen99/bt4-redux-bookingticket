@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { xoaGheAction } from '../redux/actions/BTBookingTicKetActions'
+import { xacNhanDatAction, xacNhanDatGhe, xoaGheAction } from '../redux/actions/BTBookingTicKetActions'
 
 class ThongTin extends Component {
 
@@ -68,6 +68,9 @@ class ThongTin extends Component {
                             {this.renderTongTien()}
                         </tbody>
                     </table>
+                    <button onClick={() => {
+                      this.props.xacNhanDat()
+                    }} type="button" className="btn btn-light w-100">Comfirm booking tickets</button>
                 </div>
 
 
@@ -83,6 +86,10 @@ const mapDispatchToProps = (dispatch) => {
         xoaGheDat: (soGhe) => {
             const action = xoaGheAction(soGhe)
             dispatch(action)
+        },
+        xacNhanDat: () => {
+            const action = xacNhanDatAction
+            dispatch(action())
         }
     }
 }
