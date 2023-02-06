@@ -186,13 +186,13 @@ const initialState = {
     
     ],
     mangGheDangDat: [],
-    selectStatus: true
+  
 }
 
 export const bookingTicketReducer = (state = initialState, action) => {
     switch (action.type) {
         case DAT_GHE:
-            if(state.selectStatus){
+   
                 let mangGheDangDatCapNhat = [...state.mangGheDangDat]
                 let gheTK = mangGheDangDatCapNhat.find(gheDat => gheDat.soGhe === action.ghe.soGhe);
                 if(gheTK){
@@ -204,15 +204,15 @@ export const bookingTicketReducer = (state = initialState, action) => {
                     }
                 state.mangGheDangDat = [...mangGheDangDatCapNhat, gheDat]
                 }  
-            }
+      
            
         return {...state};
             
         case XOA_GHE:
-            if(state.selectStatus){
+      
                 let mangGheDangDatCN = [...state.mangGheDangDat]
                 state.mangGheDangDat = mangGheDangDatCN.filter(gheDat => gheDat.soGhe !== action.soGhe)
-            }
+
             return {...state};
         case XAC_NHAN:
           let mangGhe = [];
