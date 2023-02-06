@@ -5,7 +5,7 @@ import { datGheAction } from '../redux/actions/BTBookingTicKetActions'
 class HangGhe extends Component {
 
     renderHangGhe = () => {
-        return this.props.danhSachGhe.map((hangGhe, index) => {
+        return this.props.mangGhe.map((hangGhe, index) => {
             if(index === 0){
                 return <tr key={hangGhe.hang}>
                 <td>{hangGhe.hang}</td>
@@ -71,7 +71,8 @@ class HangGhe extends Component {
 
 const mapStateToProps = (rootReducer) => {
     return {
-        mangGheDangDat: rootReducer.bookingTicketReducer.mangGheDangDat
+        mangGheDangDat: rootReducer.bookingTicketReducer.mangGheDangDat,
+        mangGhe:rootReducer.bookingTicketReducer.mangGhe
     }
 }
 
